@@ -7,7 +7,9 @@
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif
-
+#define RELEASE_SAFELY(__Point) {[__Point release]; __Point = nil;}
+#import "Tools.h"
+#import "MyTableBarController.h"
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
