@@ -1,0 +1,26 @@
+//
+// Prefix header for all source files of the 'ONE' target in the 'ONE' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#define RELEASE_SAFELY(__Point) {[__Point release]; __Point = nil;} 
+#import "Tools.h"
+#import "MyTableBarController.h"
+#import "UserLocation.h"
+#endif
+
+//如果是release版本，不打印log信息
+#ifdef __OPTIMIZE__
+#define NSLog(...) {}
+#endif
+
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
